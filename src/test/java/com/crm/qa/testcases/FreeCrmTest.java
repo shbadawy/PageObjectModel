@@ -19,7 +19,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class FreeCrmTest {
 
-	static WebDriver driver = null;
+	WebDriver driver = null;
 	static JavascriptExecutor js;
 	
 	@BeforeMethod
