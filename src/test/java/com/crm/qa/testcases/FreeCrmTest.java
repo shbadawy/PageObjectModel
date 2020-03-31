@@ -30,6 +30,7 @@ public class FreeCrmTest {
 		opt.addArguments("start-maximized");
 		opt.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
 		opt.setExperimentalOption("useAutomationExtension", false);
+		opt.addArguments("--no-sandbox");
 		//*****************************************
 
 		driver = new ChromeDriver(opt);		
