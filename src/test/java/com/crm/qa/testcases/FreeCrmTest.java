@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -23,23 +24,62 @@ public class FreeCrmTest {
 		System.setProperty("webdriver.chrome.driver", "/home/shimaa/Selenuim jars/chromedriver");
 		driver = new ChromeDriver();
 		js = (JavascriptExecutor) driver;
-		driver.get("https://www.freecrm.com/index.html");
+		driver.get("http://127.0.0.1:8000");
 	}
 
 	@Test
 	public void freeCrmTitleTest() throws InterruptedException, IOException {
-		String title = driver.getTitle();
-		System.out.println("title is: " + title);
-		getRunTimeInfoMessage("info", title);
+		//*************************************//
+		Thread.sleep(2000);
+		
+		driver.findElement(By.id("fNumber")).sendKeys("2");
+		Thread.sleep(1000);
+		driver.findElement(By.id("sNumber")).sendKeys("3");
+		Thread.sleep(1000);
+		driver.findElement(By.id("menu")).sendKeys("+");
+		Thread.sleep(1000);
+		driver.findElement(By.id("submit")).click();
+		
+		Thread.sleep(2000);
+		//*************************************//
+		Thread.sleep(2000);
+		
+		driver.findElement(By.id("fNumber")).sendKeys("200");
+		Thread.sleep(1000);
+		driver.findElement(By.id("sNumber")).sendKeys("3057");
+		Thread.sleep(1000);
+		driver.findElement(By.id("menu")).sendKeys("-");
+		Thread.sleep(1000);
+		driver.findElement(By.id("submit")).click();
+		
+		Thread.sleep(2000);
+		//*************************************//
+		Thread.sleep(2000);
+		
+		driver.findElement(By.id("fNumber")).sendKeys("13");
+		Thread.sleep(1000);
+		driver.findElement(By.id("sNumber")).sendKeys("152");
+		Thread.sleep(1000);
+		driver.findElement(By.id("menu")).sendKeys("*");
+		Thread.sleep(1000);
+		driver.findElement(By.id("submit")).click();
+		
+		Thread.sleep(2000);
+		//*************************************//
+		Thread.sleep(2000);
+		
+		driver.findElement(By.id("fNumber")).sendKeys("2");
+		Thread.sleep(1000);
+		driver.findElement(By.id("sNumber")).sendKeys("3");
+		Thread.sleep(1000);
+		driver.findElement(By.id("menu")).sendKeys("/");
+		Thread.sleep(1000);
+		driver.findElement(By.id("submit")).click();
+		
+		Thread.sleep(2000);
+		driver.close();
 
-		if (title.equals("Free CRM software in the cloud powers sales and customer serviceQQQQ")) {
-			getRunTimeInfoMessage("info", "title is correct!! YAY!!!");
-			Assert.assertTrue(true);
-		} else {
-			getRunTimeInfoMessage("error", "title is not correct!! BUG BUG BUG!!!");
-			takeScreenshot("freecrmloginpage");
-			Assert.assertTrue(false);
-		}
+		
 
 	}
 
