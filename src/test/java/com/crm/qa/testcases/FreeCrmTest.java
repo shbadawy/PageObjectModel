@@ -3,13 +3,16 @@ package com.crm.qa.testcases;
 import java.io.IOException;
 import java.util.Collections;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
 //import  org.openqa.selenium.chrome.ChromeDriver.options.Options;
 
 //from selenium.webdriver.chrome.options import Options;
@@ -23,18 +26,13 @@ public class FreeCrmTest {
 	public void setUp() throws Exception {
 		
 		//System.setProperty("webdriver.chrome.driver", "C:\\Utility\\BrowserDrivers\\chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver", "/home/shimaa/Selenuim jars/chromedriver");
+		//System.setProperty("webdriver.chrome.driver", "/home/shimaa/Selenuim jars/chromedriver");
 		//*****************************************
-		ChromeOptions opt = new ChromeOptions();
-		opt.setBinary("/usr/bin/google-chrome");  //chrome binary location specified here
-		opt.addArguments("start-maximized");
-		opt.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-		opt.setExperimentalOption("useAutomationExtension", false);
-		opt.addArguments("--no-sandbox");
+		System.setProperty("webdriver.gecko.driver", "/home/shimaa/Selenuim jars/geckodriver");
+		 driver = new FirefoxDriver();
 		//*****************************************
-
-		driver = new ChromeDriver(opt);		
-		js = (JavascriptExecutor) driver;
+	
+		//js = (JavascriptExecutor) driver;
 		driver.get("http://127.0.0.1:8000");
 		
 	}
