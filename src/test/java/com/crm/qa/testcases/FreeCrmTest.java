@@ -28,7 +28,7 @@ public class FreeCrmTest {
 		//System.setProperty("webdriver.chrome.driver", "C:\\Utility\\BrowserDrivers\\chromedriver.exe");
 		//System.setProperty("webdriver.chrome.driver", "/home/shimaa/Selenuim jars/chromedriver");
 		//*****************************************
-		System.setProperty("webdriver.gecko.driver", "/var/lib/jenkins/workspace/maven-test-maven/geckodriver");
+		System.setProperty("webdriver.gecko.driver", "/home/shimaa/Selenuim jars/geckodriver");
 		 driver = new FirefoxDriver();
 		//*****************************************
 	
