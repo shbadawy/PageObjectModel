@@ -26,7 +26,7 @@ public class FreeCrmTest {
 		System.setProperty("webdriver.chrome.driver", "/home/shimaa/Selenuim jars/chromedriver");
 		//*****************************************
 		ChromeOptions opt = new ChromeOptions();
-		opt.setBinary("/etc/alternatives/google-chrome");  //chrome binary location specified here
+		opt.setBinary("/usr/bin/google-chrome");  //chrome binary location specified here
 		opt.addArguments("start-maximized");
 		opt.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
 		opt.setExperimentalOption("useAutomationExtension", false);
